@@ -8,11 +8,7 @@ def main():
     output_file = args[1].split(".")[0] + ".asm"
 
     parser1 = parser.Parser(args[1])
-    parser1.get_commands()
-    parser1.rm_comments()
-    parser1.rm_new_line()
-    parser1.rm_blank_line()
-    commands = parser1.commands
+    commands = parser1.get_code()
 
     codewriter = codeWriter.CodeWriter(commands)
     codewriter.translate()

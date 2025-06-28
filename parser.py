@@ -27,6 +27,13 @@ class Parser:
             if line != "":
                 self.commands.append(line)
 
+    def get_code(self):
+        self.get_commands()
+        self.rm_comments()
+        self.rm_new_line()
+        self.rm_blank_line()
+        return self.commands
+
 
            
         
